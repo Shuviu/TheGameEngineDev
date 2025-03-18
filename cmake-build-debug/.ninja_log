@@ -1,0 +1,12 @@
+# ninja log v6
+182	219	1742329347432164024	GameEngine	23633c8a57d0c547
+0	21	1742329769196450954	build.ninja	676ed73a8e7f7dd7
+1	183	1742329287347840792	CMakeFiles/GameEngine.dir/main.cpp.o	34cb1b5337492c31
+1	652	1742329702478339268	CMakeFiles/GameEngine.dir/src/main.cpp.o	cbf3a8db7dcff40e
+1	11	1742329778573405483	CMakeFiles/GameEngine.dir/src/Character/Player.cpp.o	b63b49bfaeb4cd36
+2	11	1742329778574405479	CMakeFiles/GameEngine.dir/src/GameHelper/Asset/Asset.cpp.o	393b838915a6c70f
+2	147	1742329778574405479	CMakeFiles/GameEngine.dir/src/GameHelper/Scene/Scene.cpp.o	5175ae9ede939d8c
+1	272	1742329778573405483	CMakeFiles/GameEngine.dir/src/GameHelper/Render/ScreenRenderer.cpp.o	aa1f9cc9ea53eeba
+2	349	1742329778574405479	CMakeFiles/GameEngine.dir/src/GameHelper/IO/InputHandlerAsync.cpp.o	ce58ce8484b18af4
+1	660	1742329778573405483	CMakeFiles/GameEngine.dir/src/GameHelper/GameState.cpp.o	b652252386ee0521
+660	696	1742329779232402288	GameEngine	e3042257dfb99cd
