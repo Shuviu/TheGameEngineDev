@@ -15,7 +15,9 @@ add_executable(GameEngine src/main.cpp
         src/GameHelper/Scene/Scene.cpp
         src/GameHelper/Scene/Scene.h
         src/GameHelper/Asset/Asset.cpp
-        src/GameHelper/Asset/Asset.h)
+        src/GameHelper/Asset/Asset.h
+        src/GameHelper/Scene/SceneLoader.cpp
+        src/GameHelper/Scene/SceneLoader.h)
 
 set (TERMINALUTILS_PATH /usr/local/lib/cpp/terminalUtilities)
 include_directories(${TERMINALUTILS_PATH}/include)

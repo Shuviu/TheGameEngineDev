@@ -98,6 +98,13 @@ build CMakeFiles/GameEngine.dir/src/GameHelper/Asset/Asset.cpp.o: CXX_COMPILER__
   OBJECT_DIR = CMakeFiles/GameEngine.dir
   OBJECT_FILE_DIR = CMakeFiles/GameEngine.dir/src/GameHelper/Asset
 
+build CMakeFiles/GameEngine.dir/src/GameHelper/Scene/SceneLoader.cpp.o: CXX_COMPILER__GameEngine_unscanned_Debug /home/shuviu/01_Data/24_Cpp/GameEngine/src/GameHelper/Scene/SceneLoader.cpp || cmake_object_order_depends_target_GameEngine
+  DEP_FILE = CMakeFiles/GameEngine.dir/src/GameHelper/Scene/SceneLoader.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/usr/local/lib/cpp/terminalUtilities/include
+  OBJECT_DIR = CMakeFiles/GameEngine.dir
+  OBJECT_FILE_DIR = CMakeFiles/GameEngine.dir/src/GameHelper/Scene
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target GameEngine
@@ -106,7 +113,7 @@ build CMakeFiles/GameEngine.dir/src/GameHelper/Asset/Asset.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable GameEngine
 
-build GameEngine: CXX_EXECUTABLE_LINKER__GameEngine_Debug CMakeFiles/GameEngine.dir/src/main.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/GameState.cpp.o CMakeFiles/GameEngine.dir/src/Character/Player.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/Render/ScreenRenderer.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/IO/InputHandlerAsync.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/Scene/Scene.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/Asset/Asset.cpp.o | /usr/local/lib/cpp/terminalUtilities/src/libTerminalUtilities.a
+build GameEngine: CXX_EXECUTABLE_LINKER__GameEngine_Debug CMakeFiles/GameEngine.dir/src/main.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/GameState.cpp.o CMakeFiles/GameEngine.dir/src/Character/Player.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/Render/ScreenRenderer.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/IO/InputHandlerAsync.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/Scene/Scene.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/Asset/Asset.cpp.o CMakeFiles/GameEngine.dir/src/GameHelper/Scene/SceneLoader.cpp.o | /usr/local/lib/cpp/terminalUtilities/src/libTerminalUtilities.a
   FLAGS = -g
   LINK_LIBRARIES = /usr/local/lib/cpp/terminalUtilities/src/libTerminalUtilities.a
   OBJECT_DIR = CMakeFiles/GameEngine.dir

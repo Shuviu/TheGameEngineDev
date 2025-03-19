@@ -4,50 +4,44 @@
 
 #include "Scene.h"
 
+#include <iostream>
+#include <ostream>
+#include <TerminalUtilities.h>
+#include <utility>
+
+#include "SceneLoader.h"
+
 
 // ---- Constructors ---- ////
-Scene::Scene(const int height, const int width) {
-    height_ = height;
-    width_ = width;
+Scene::Scene() {
+    sceneMatrix_ = std::vector<std::string>();
+    isUpdated_ = false;
+}
 
-    sceneMatrix_ = new char*[height];
-
-    for (int i = 0; i < ( sizeof(sceneMatrix_) / sizeof(sceneMatrix_[0])); ++i) {
-        sceneMatrix_[i] = new char[width];
-    }
-
+Scene::Scene(const std::string* pathToFile) {
+    const std::tuple<std::vector<std::string>, std::vector<Asset::Asset>> scene = SceneLoader::LoadSceneFile(pathToFile);
+    sceneMatrix_ = std::get<0>(scene);
+    assets_ = std::get<1>(scene);
+    isUpdated_ = false;
 }
 
 Scene::~Scene() {
-    for (int i = 0; i < ( sizeof(sceneMatrix_) / sizeof(sceneMatrix_[0])); ++i) {
-        delete[] sceneMatrix_[i];
+    for (int i = 0; i < sceneMatrix_.size(); ++i) {
+        std::free(&sceneMatrix_.at(i));
     }
-    delete[] sceneMatrix_;
+    std::free(&sceneMatrix_);
 }
 // ---- Getter ---- ////
-int Scene::GetHeight() const {
-        return height_;
-}
-
-int Scene::GetWidth() const {
-    return width_;
-}
 
 std::vector<Asset::Asset> *Scene::GetAssets() {
     return &assets_;
 }
 
-char **Scene::GetSceneMatrix() const {
+std::vector<std::string> Scene::GetSceneMatrix() const {
     return sceneMatrix_;
 }
 
 // ---- Setter ---- ////
-void Scene::SetHeight(int height) {
-    height_ = height;
-}
-void Scene::SetWidth(int width) {
-    width_ = width;
-}
 void Scene::SetAssetsVector(const std::vector<Asset::Asset> &assets) {
     assets_ = assets;
 }
@@ -58,14 +52,21 @@ void Scene::AddAsset(const Asset::Asset &asset) {
 void Scene::RemoveAsset(const Asset::Asset &asset) {
 
 }
-void Scene::SetSceneMatrix(char **sceneMatrix) {
-    sceneMatrix_ = sceneMatrix;
+
+void Scene::SetSceneMatrix(std::vector<std::string> sceneMatrix) {
+    sceneMatrix_ = std::move(sceneMatrix);
 }
 
 // ---- Member functions ---- ////
 
 void Scene::Render() {
-
+    if (!isUpdated_) {
+        isUpdated_ = true;
+        Console::StdReset();
+        for (int i = 0; i < sceneMatrix_.size(); ++i) {
+            std::cout << sceneMatrix_.at(i) << std::endl;
+        }
+    }
 }
 
 

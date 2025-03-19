@@ -1,12 +1,17 @@
 # ninja log v6
-182	219	1742329347432164024	GameEngine	23633c8a57d0c547
-0	21	1742329769196450954	build.ninja	676ed73a8e7f7dd7
+2	324	1742385110523386673	CMakeFiles/GameEngine.dir/src/GameHelper/Scene/SceneLoader.cpp.o	9d3a6f0fe1fd377e
 1	183	1742329287347840792	CMakeFiles/GameEngine.dir/main.cpp.o	34cb1b5337492c31
-1	652	1742329702478339268	CMakeFiles/GameEngine.dir/src/main.cpp.o	cbf3a8db7dcff40e
+1	644	1742385748225136382	CMakeFiles/GameEngine.dir/src/GameHelper/GameState.cpp.o	b652252386ee0521
+1	311	1742385420975782569	CMakeFiles/GameEngine.dir/src/GameHelper/Scene/Scene.cpp.o	5175ae9ede939d8c
+3	633	1742382542631353476	CMakeFiles/GameEngine.dir/src/GameHelper/Scene/ScneLoader.cpp.o	dbe7d348d3671af
 1	11	1742329778573405483	CMakeFiles/GameEngine.dir/src/Character/Player.cpp.o	b63b49bfaeb4cd36
-2	11	1742329778574405479	CMakeFiles/GameEngine.dir/src/GameHelper/Asset/Asset.cpp.o	393b838915a6c70f
-2	147	1742329778574405479	CMakeFiles/GameEngine.dir/src/GameHelper/Scene/Scene.cpp.o	5175ae9ede939d8c
 1	272	1742329778573405483	CMakeFiles/GameEngine.dir/src/GameHelper/Render/ScreenRenderer.cpp.o	aa1f9cc9ea53eeba
+2	11	1742329778574405479	CMakeFiles/GameEngine.dir/src/GameHelper/Asset/Asset.cpp.o	393b838915a6c70f
+1	657	1742385674406282245	CMakeFiles/GameEngine.dir/src/main.cpp.o	cbf3a8db7dcff40e
+1	12	1742385780715072183	build.ninja	8320a188cf9704b9
+644	684	1742385748868135112	GameEngine	6ba5121cbdfe0eb9
 2	349	1742329778574405479	CMakeFiles/GameEngine.dir/src/GameHelper/IO/InputHandlerAsync.cpp.o	ce58ce8484b18af4
-1	660	1742329778573405483	CMakeFiles/GameEngine.dir/src/GameHelper/GameState.cpp.o	b652252386ee0521
-660	696	1742329779232402288	GameEngine	e3042257dfb99cd
+1	339	1742385846725941756	CMakeFiles/GameEngine.dir/src/GameHelper/Scene/Scene.cpp.o	5175ae9ede939d8c
+1	700	1742385846725941756	CMakeFiles/GameEngine.dir/src/main.cpp.o	cbf3a8db7dcff40e
+1	702	1742385846725941756	CMakeFiles/GameEngine.dir/src/GameHelper/GameState.cpp.o	b652252386ee0521
+702	743	1742385847426940371	GameEngine	6ba5121cbdfe0eb9

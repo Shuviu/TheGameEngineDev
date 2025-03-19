@@ -4,6 +4,7 @@
 
 #ifndef SCENE_H
 #define SCENE_H
+#include <string>
 #include <vector>
 
 #include "../Asset/Asset.h"
@@ -11,18 +12,14 @@
 class Scene {
 private:
     std::vector<Asset::Asset> assets_;
-    int height_;
-    char** sceneMatrix_;
-    int width_;
+    std::vector<std::string> sceneMatrix_;
+    bool isUpdated_;
 public:
-    Scene(int height, int width);
+    Scene();
+    explicit Scene(const std::string* pathToFile);
     ~Scene();
-    int GetHeight() const;
-    void SetHeight(int height);
-    int GetWidth() const;
-    void SetWidth(int width);
-    char** GetSceneMatrix() const;
-    void SetSceneMatrix(char** sceneMatrix);
+    [[nodiscard]] std::vector<std::string> GetSceneMatrix() const;
+    void SetSceneMatrix(std::vector<std::string> sceneMatrix);
     std::vector<Asset::Asset>* GetAssets();
     void SetAssetsVector(const std::vector<Asset::Asset>& assets_);
     void AddAsset(const Asset::Asset& asset);

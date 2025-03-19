@@ -1,6 +1,7 @@
 #include <iostream>
 #include <TerminalUtilities.h>
 #include "GameHelper/GameState.h"
+#include "GameHelper/Scene/SceneLoader.h"
 using namespace UtilityClasses;
 
 void testRenderPlayer(const std::tuple<int, int> &pos);
@@ -14,9 +15,10 @@ int main() {
     testRenderPlayer(pos);
 
     auto gameState = GameState();
-    gameState.SetScene(new Scene(5, 5));
+    std::string path = "/home/shuviu/01_Data/24_Cpp/GameEngine/TestAssets/testScene.txt";
+    gameState.SetScene(new Scene(&path));
     gameState.Initialize(updateLoop);
-
+    Console::StdReadKey();
     return 0;
 }
 

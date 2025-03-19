@@ -27,7 +27,7 @@ private:
         int GetKeyPressed();
         [[nodiscard]] Scene* GetScene() const;
         void SetScene(Scene* scene);
-        bool GetKeyUpdate() const;
+        [[nodiscard]] bool GetKeyUpdate() const;
 
 };
 
