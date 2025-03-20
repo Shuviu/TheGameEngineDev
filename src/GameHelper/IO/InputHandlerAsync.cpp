@@ -8,6 +8,8 @@
 #include <TerminalUtilities.h>
 
 namespace UtilityClasses {
+
+    //// ---- Constructor ---- ////
     InputHandlerAsync::InputHandlerAsync() {
         threadStopped_.store(false);
         keyUpdate_.store(false);
@@ -15,7 +17,17 @@ namespace UtilityClasses {
     };
     InputHandlerAsync::~InputHandlerAsync() = default;
 
+    //// ---- Getter ---- ////
+    int InputHandlerAsync::InputKey() {
+        keyUpdate_.store(false);
+        return inputKey_.load();
+    }
 
+    bool InputHandlerAsync::KeyUpdate() const {
+        return keyUpdate_.load();
+    }
+
+    //// ---- Method ---- ////
     void InputHandlerAsync::Start() {
             while (!threadStopped_.load()) {
                 if (!keyUpdate_.load()) {
@@ -28,14 +40,5 @@ namespace UtilityClasses {
 
     void InputHandlerAsync::Stop() {
         threadStopped_.store(true);
-    }
-
-    int InputHandlerAsync::InputKey() {
-        keyUpdate_.store(false);
-        return inputKey_.load();
-    }
-
-    bool InputHandlerAsync::KeyUpdate() const {
-        return keyUpdate_.load();
     }
 }

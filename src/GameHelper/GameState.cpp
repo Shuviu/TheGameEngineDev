@@ -6,24 +6,14 @@
 
 #include "IO/InputHandlerAsync.h"
 
+
+//// ---- Constructors ---- ////
 GameState::GameState() {
     keyUpdate_ = false;
     isRunning_ = false;
     keyPressed_ = -1;
 }
-
-int GameState::FetchPressedKey(UtilityClasses::InputHandlerAsync *inputHandler) {
-    if (inputHandler->KeyUpdate()) {
-        keyUpdate_ = true;
-        return inputHandler->InputKey();
-    }
-    else {
-        keyUpdate_ = false;
-        return -1;
-    }
-    return inputHandler->KeyUpdate() ? inputHandler->InputKey() : -1;
-}
-
+//// ---- Getter ---- ////
 int GameState::GetKeyPressed() {
     keyUpdate_ = false;
     return keyPressed_;
@@ -33,15 +23,15 @@ bool GameState::GetKeyUpdate() const {
     return keyUpdate_;
 }
 
+Scene* GameState::GetScene() const {
+    return currScene_;
+}
+//// ---- Setter ---- ////
 void GameState::SetScene(Scene *scene) {
     currScene_ = scene;
 }
 
-Scene* GameState::GetScene() const {
-    return currScene_;
-}
-
-
+//// ---- Methods ---- ////
 void GameState::Initialize(const std::function<int(GameState *)> &UpdateLoop)
 {
     // Init params
@@ -88,4 +78,16 @@ void GameState::Initialize(const std::function<int(GameState *)> &UpdateLoop)
 void GameState::StartInputHandlerAsync(UtilityClasses::InputHandlerAsync* inputHandler) {
     std::thread worker (&UtilityClasses::InputHandlerAsync::Start, inputHandler);
     worker.detach();
+}
+
+int GameState::FetchPressedKey(UtilityClasses::InputHandlerAsync *inputHandler) {
+    if (inputHandler->KeyUpdate()) {
+        keyUpdate_ = true;
+        return inputHandler->InputKey();
+    }
+    else {
+        keyUpdate_ = false;
+        return -1;
+    }
+    return inputHandler->KeyUpdate() ? inputHandler->InputKey() : -1;
 }

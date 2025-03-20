@@ -11,10 +11,10 @@
 
 
 class SceneLoader {
-private:
-    static std::vector<std::string> LoadSceneRegion(std::ifstream* filestream);
-        public:
-                static std::tuple<std::vector<std::string>, std::vector<Asset::Asset>> LoadSceneFile(const std::string* pathToFile);
+    private:
+        static std::vector<std::string> LoadSceneRegion(std::ifstream* filestream);
+    public:
+            static std::tuple<std::vector<std::string>, std::vector<Asset::Asset>> LoadSceneFile(const std::string* pathToFile);
 
 };
 

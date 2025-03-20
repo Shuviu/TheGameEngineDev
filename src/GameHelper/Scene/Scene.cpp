@@ -31,8 +31,8 @@ Scene::~Scene() {
     }
     std::free(&sceneMatrix_);
 }
-// ---- Getter ---- ////
 
+// ---- Getter ---- ////
 std::vector<Asset::Asset> *Scene::GetAssets() {
     return &assets_;
 }
@@ -58,7 +58,6 @@ void Scene::SetSceneMatrix(std::vector<std::string> sceneMatrix) {
 }
 
 // ---- Member functions ---- ////
-
 void Scene::Render() {
     if (!isUpdated_) {
         isUpdated_ = true;

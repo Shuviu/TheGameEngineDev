@@ -26,9 +26,8 @@ private:
         void Initialize(const std::function<int(GameState*)>& UpdateLoop);
         int GetKeyPressed();
         [[nodiscard]] Scene* GetScene() const;
-        void SetScene(Scene* scene);
         [[nodiscard]] bool GetKeyUpdate() const;
-
+        void SetScene(Scene* scene);
 };
 
 #endif //GAMESTATE_H
