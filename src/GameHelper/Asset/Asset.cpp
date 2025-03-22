@@ -4,5 +4,6 @@
 
 #include "Asset.h"
 
-namespace Asset {
+namespace Assets {
+
 } // Asset

@@ -19,11 +19,17 @@ Scene::Scene() {
 }
 
 Scene::Scene(const std::string* pathToFile) {
-    const std::tuple<std::vector<std::string>, std::vector<Asset::Asset>> scene = SceneLoader::LoadSceneFile(pathToFile);
+    sceneMatrix_ = SceneLoader::LoadSceneFile(pathToFile);
+    isUpdated_ = false;
+}
+
+Scene::Scene(const std::string *pathToFile, std::map<std::string, std::function<Assets::Asset()>> assetMap) {
+    const auto scene = SceneLoader::LoadSceneFile(pathToFile, assetMap);
     sceneMatrix_ = std::get<0>(scene);
     assets_ = std::get<1>(scene);
     isUpdated_ = false;
 }
+
 
 Scene::~Scene() {
     for (int i = 0; i < sceneMatrix_.size(); ++i) {
@@ -33,7 +39,7 @@ Scene::~Scene() {
 }
 
 // ---- Getter ---- ////
-std::vector<Asset::Asset> *Scene::GetAssets() {
+std::vector<Assets::Asset> *Scene::GetAssets() {
     return &assets_;
 }
 
@@ -42,14 +48,14 @@ std::vector<std::string> Scene::GetSceneMatrix() const {
 }
 
 // ---- Setter ---- ////
-void Scene::SetAssetsVector(const std::vector<Asset::Asset> &assets) {
+void Scene::SetAssetsVector(const std::vector<Assets::Asset> &assets) {
     assets_ = assets;
 }
 
-void Scene::AddAsset(const Asset::Asset &asset) {
+void Scene::AddAsset(const Assets::Asset &asset) {
 
 }
-void Scene::RemoveAsset(const Asset::Asset &asset) {
+void Scene::RemoveAsset(const Assets::Asset &asset) {
 
 }
 
